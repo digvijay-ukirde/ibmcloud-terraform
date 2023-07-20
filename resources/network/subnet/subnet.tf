@@ -16,6 +16,7 @@ variable "subnet_name" {}
 variable "subnet_cidr_block" {}
 variable "public_gateway" {}
 variable "resource_group_id" {}
+variable "tags" {}
 
 resource "ibm_is_subnet" "itself" {
   name            = var.subnet_name
@@ -24,6 +25,7 @@ resource "ibm_is_subnet" "itself" {
   zone            = var.zone
   ipv4_cidr_block = var.subnet_cidr_block
   public_gateway  = var.public_gateway
+  tags            = var.tags
 }
 
 output "id" {
